@@ -1,1 +1,1 @@
-# cnpm
+# cnpm_student_management
