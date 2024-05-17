@@ -1,0 +1,22 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Thêm học sinh mới</h2>
+  <form method="POST" action="{{ url_for('add_or_update_classroom') }}">
+
+   {{ form.csrf_token }}
+    {{form.id}}
+    <div class="mb-3">
+      {{form.name.label}}
+      {{form.name(class="form-control")}}
+    </div>
+      <div class="mb-3">
+      {{form.students.label}}
+    {{ form.students(class_="selectpicker", **{'data-live-search': 'true'}) }}
+      </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+  </form>
+</div>
+{% endblock %}
